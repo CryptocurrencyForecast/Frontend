@@ -1,15 +1,25 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './HomePage.module.scss';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-const HomePage = () => (
-  <div className={styles.HomePage}>
-    HomePage Component
-  </div>
-);
+function HomePage() {
+  const [coins, setCoins] = useState([]);
 
-HomePage.propTypes = {};
+  useEffect(() => {
+    axios
+      .get(
+        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
+      )
+      .then((res) => {
+        setCoins(res.data);
+        console.log(res.data);
+      });
+  });
 
-HomePage.defaultProps = {};
+  return (
+    <div className="HomePage">
+      <h1>HAHHAHAHAHAHAHAHHA</h1>
+    </div>
+  );
+}
 
 export default HomePage;
