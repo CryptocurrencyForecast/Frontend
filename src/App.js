@@ -1,12 +1,15 @@
 import "./App.css";
 import HomePage from "./components/HomePage/HomePage";
+import PostList from "./components/Reddit/PostList";
+
 
 function App() {
-  return (
-    <div className="App">
-      <HomePage />
-    </div>
-  );
+    return (
+        <div className="App">
+            <HomePage/>
+            <PostList ticker="BTC"/>
+        </div>
+    );
 }
 
 export default App;
