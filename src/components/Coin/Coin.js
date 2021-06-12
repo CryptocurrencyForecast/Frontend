@@ -1,4 +1,5 @@
 import React from "react";
+import "./Coin.scss";
 
 const Coin = ({
   name,
