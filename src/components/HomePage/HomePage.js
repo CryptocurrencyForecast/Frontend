@@ -1,23 +1,29 @@
 import React, { useState, useEffect } from "react";
+import { trackPromise } from "react-promise-tracker";
+import Spinner from "../Spinner/Spinner";
 import Coin from "../Coin/Coin";
 import axios from "axios";
+import { If } from "react-if";
 import "./HomePage.scss";
 
 function HomePage() {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      axios
-        .get(
-          "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
-        )
-        .then((res) => {
-          setCoins(res.data);
-          console.log(res.data);
-        })
-        .catch((error) => console.log(error));
+      trackPromise(
+        axios
+          .get(
+            "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
+          )
+          .then((res) => {
+            setCoins(res.data);
+            setLoading(false);
+          })
+          .catch((error) => console.error(error))
+      );
     }, 1000);
     return () => clearInterval(interval);
   }, []);
@@ -72,7 +78,10 @@ function HomePage() {
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className={`${loading ? "active" : ""}`}>
+            <If condition={loading}>
+              <Spinner />
+            </If>
             {filteredCoins.map((coin) => {
               return (
                 <Coin

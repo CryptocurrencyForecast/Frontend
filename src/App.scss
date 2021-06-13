@@ -9,6 +9,13 @@
   color: white;
 }
 
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
   max-width: 1200px;

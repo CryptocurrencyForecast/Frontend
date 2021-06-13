@@ -38,5 +38,15 @@
 
   .coin-table {
     overflow-x: auto;
+
+    table {
+      tbody {
+        &.active {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
   }
 }

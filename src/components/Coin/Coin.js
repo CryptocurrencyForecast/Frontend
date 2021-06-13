@@ -33,13 +33,13 @@ const Coin = ({ rank, name, image, symbol, price, volume, priceChange }) => {
           <div>+{priceChange.toFixed(2)}%</div>
         </td>
       )}
-      <Link to={`/crypto/${symbol.toUpperCase()}`}>
-        <td className="col coin-see-more">
+      <td className="col coin-see-more">
+        <Link to={`/crypto/${symbol.toUpperCase()}`}>
           <div>
             <AddCircleOutlineIcon />
           </div>
-        </td>
-      </Link>
+        </Link>
+      </td>
     </tr>
   );
 };
