@@ -4,6 +4,7 @@ import PostList from "./components/Reddit/PostList";
 import RedditChartbar from "./components/Reddit/RedditChartbar";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Page404 from "./components/404/404";
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
           <Route path="/pierre">
             <RedditChartbar />
           </Route>
+            <Route>
+                <Page404/>
+            </Route>
         </Switch>
       </BrowserRouter>
 
