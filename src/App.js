@@ -5,8 +5,8 @@ import PostList from "./components/Reddit/PostList";
 function App() {
   return (
     <div className="App">
-      <HomePage />
-      <PostList ticker="BTC" />
+      <HomePage/>
+      {/* <PostList ticker="BTC" /> */}
     </div>
   );
 }
