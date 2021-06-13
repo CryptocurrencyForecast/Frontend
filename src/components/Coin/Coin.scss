@@ -1,5 +1,9 @@
 .coin-row {
   .col {
+    &.coin-rank {
+      width: 100px;
+    }
+
     &.coin-currency {
       text-transform: uppercase;
     }

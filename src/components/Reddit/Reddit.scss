@@ -1,0 +1,15 @@
+.coin-graph {
+  margin-top: 100px;
+
+  &__container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .graph-spinner {
+      position: absolute;
+      z-index: 1;
+    }
+  }
+}

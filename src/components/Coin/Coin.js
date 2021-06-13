@@ -1,17 +1,12 @@
 import React from "react";
 import "./Coin.scss";
 
-const Coin = ({
-  name,
-  image,
-  symbol,
-  price,
-  volume,
-  priceChange,
-  marketCap,
-}) => {
+const Coin = ({ rank, name, image, symbol, price, volume, priceChange }) => {
   return (
     <tr className="coin-row">
+      <td className="col coin-rank">
+        <div>{rank}</div>
+      </td>
       <td className="col coin-name">
         <div>
           <img src={image} alt="crypto" />

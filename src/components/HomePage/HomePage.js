@@ -15,6 +15,7 @@ function HomePage() {
         )
         .then((res) => {
           setCoins(res.data);
+          console.log(res.data);
         })
         .catch((error) => console.log(error));
     }, 1000);
@@ -48,6 +49,9 @@ function HomePage() {
         <table rules="none">
           <thead>
             <tr>
+              <th className="col rank">
+                <div>#</div>
+              </th>
               <th className="col name">
                 <div>Nom</div>
               </th>
@@ -70,13 +74,13 @@ function HomePage() {
               return (
                 <Coin
                   key={coin.id}
+                  rank={coin.market_cap_rank}
                   name={coin.name}
                   image={coin.image}
                   symbol={coin.symbol}
                   volume={coin.total_volume}
                   price={coin.current_price}
                   priceChange={coin.price_change_percentage_24h}
-                  marketCap={coin.market_cap}
                 />
               );
             })}

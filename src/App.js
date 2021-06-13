@@ -5,13 +5,13 @@ import RedditChartbar from "./components/Reddit/RedditChartbar";
 import Spinner from "./components/Spinner/Spinner";
 
 function App() {
-    return (
-        <div className="App">
-            {/* <PostList ticker="BTC" /> */}
-            <HomePage/>
-            {/* <Spinner/> <RedditChartbar/> */}
-        </div>
-    );
+  return (
+    <div className="App">
+      {/* <PostList ticker="BTC" /> */}
+      <HomePage />
+      <RedditChartbar />
+    </div>
+  );
 }
 
 export default App;

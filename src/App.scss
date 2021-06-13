@@ -11,6 +11,10 @@
 
 .App {
   text-align: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 64px auto;
+  padding: 0 20px;
 }
 
 .App-logo {
@@ -55,6 +59,10 @@ table {
     tr {
       th {
         background-color: #7918f2;
+
+        &.col.rank {
+          width: 100px;
+        }
       }
     }
   }
@@ -73,7 +81,6 @@ table {
   tbody tr {
     display: table;
     width: 100%;
-    max-width: 1200px;
     table-layout: fixed; /* even columns width , fix width of table too*/
   }
 
