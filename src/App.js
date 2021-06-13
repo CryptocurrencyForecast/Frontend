@@ -2,25 +2,22 @@ import "./App.scss";
 import HomePage from "./components/HomePage/HomePage";
 import PostList from "./components/Reddit/PostList";
 import RedditChartbar from "./components/Reddit/RedditChartbar";
-
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import CoinPage from "./components/CoinPage/CoinPage";
 
 function App() {
   return (
     <div className="App">
       {/* <PostList ticker="BTC" /> */}
-      <BrowserRouter>
+      <Router>
         <Switch>
-          <Route path="/antoine">
+          <Route exact path="/">
             <HomePage />
-          </Route>
-          <Route path="/pierre">
             <RedditChartbar />
           </Route>
+          <Route exact path="/crypto/:id" component={CoinPage} />
         </Switch>
-      </BrowserRouter>
-
-      {/* <Spinner/> <RedditChartbar/> */}
+      </Router>
     </div>
   );
 }

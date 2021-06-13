@@ -67,6 +67,9 @@ function HomePage() {
               <th className="col percent">
                 <div>% de changement</div>
               </th>
+              <th className="col see-more">
+                <div>Voir plus</div>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -78,7 +81,7 @@ function HomePage() {
                   name={coin.name}
                   image={coin.image}
                   symbol={coin.symbol}
-                  volume={coin.total_volume}
+                  volume={coin.market_cap}
                   price={coin.current_price}
                   priceChange={coin.price_change_percentage_24h}
                 />
