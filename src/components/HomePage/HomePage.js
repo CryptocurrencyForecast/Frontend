@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Coin from "../Coin/Coin";
 import axios from "axios";
+import "./HomePage.scss";
 
 function HomePage() {
   const [coins, setCoins] = useState([]);
@@ -28,7 +29,7 @@ function HomePage() {
   return (
     <div className="coin-app">
       <div className="coin-search">
-        <h1>Search a currency</h1>
+        <h1 className="coin-text">Search a currency</h1>
         <form>
           <input
             type="text"
@@ -38,20 +39,48 @@ function HomePage() {
           />
         </form>
       </div>
-      {filteredCoins.map((coin) => {
-        return (
-          <Coin
-            key={coin.id}
-            name={coin.name}
-            image={coin.image}
-            symbol={coin.symbol}
-            volume={coin.total_volume}
-            price={coin.current_price}
-            priceChange={coin.price_change_percentage_24h}
-            marketCap={coin.market_cap}
-          />
-        );
-      })}
+      <div className="coin-table">
+        <table rules="none">
+          <thead>
+            <tr>
+              <th className="col name">
+                <div>Nom</div>
+              </th>
+              <th className="col currency">
+                <div>Devise</div>
+              </th>
+              <th className="col value">
+                <div>Valeur</div>
+              </th>
+              <th className="col name">
+                <div>Nom</div>
+              </th>
+              <th className="col percent">
+                <div>% de changement</div>
+              </th>
+              <th className="col name">
+                <div>Nom</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredCoins.map((coin) => {
+              return (
+                <Coin
+                  key={coin.id}
+                  name={coin.name}
+                  image={coin.image}
+                  symbol={coin.symbol}
+                  volume={coin.total_volume}
+                  price={coin.current_price}
+                  priceChange={coin.price_change_percentage_24h}
+                  marketCap={coin.market_cap}
+                />
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
