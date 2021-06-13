@@ -4,6 +4,12 @@
       width: 100px;
     }
 
+    &.coin-name {
+      div {
+        justify-content: flex-start;
+      }
+    }
+
     &.coin-currency {
       text-transform: uppercase;
     }
@@ -19,6 +25,14 @@
         div {
           color: #11d811;
         }
+      }
+    }
+
+    &.coin-see-more {
+      cursor: pointer;
+
+      div {
+        justify-content: center;
       }
     }
   }

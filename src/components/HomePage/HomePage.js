@@ -65,7 +65,10 @@ function HomePage() {
                 <div>Market Cap</div>
               </th>
               <th className="col percent">
-                <div>% de changement</div>
+                <div>% de changement (24h)</div>
+              </th>
+              <th className="col see-more">
+                <div>Voir plus</div>
               </th>
             </tr>
           </thead>
@@ -78,7 +81,7 @@ function HomePage() {
                   name={coin.name}
                   image={coin.image}
                   symbol={coin.symbol}
-                  volume={coin.total_volume}
+                  volume={coin.market_cap}
                   price={coin.current_price}
                   priceChange={coin.price_change_percentage_24h}
                 />

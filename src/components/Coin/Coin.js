@@ -1,5 +1,7 @@
 import React from "react";
 import "./Coin.scss";
+import { Link } from "react-router-dom";
+import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 
 const Coin = ({ rank, name, image, symbol, price, volume, priceChange }) => {
   return (
@@ -31,6 +33,13 @@ const Coin = ({ rank, name, image, symbol, price, volume, priceChange }) => {
           <div>+{priceChange.toFixed(2)}%</div>
         </td>
       )}
+      <Link to={`/crypto/${symbol.toUpperCase()}`}>
+        <td className="col coin-see-more">
+          <div>
+            <AddCircleOutlineIcon />
+          </div>
+        </td>
+      </Link>
     </tr>
   );
 };
