@@ -65,7 +65,7 @@ function HomePage() {
                 <div>Market Cap</div>
               </th>
               <th className="col percent">
-                <div>% de changement</div>
+                <div>% de changement (24h)</div>
               </th>
               <th className="col see-more">
                 <div>Voir plus</div>

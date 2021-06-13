@@ -1,1 +1,47 @@
-.CoinPage {}
+.coin-page {
+  .home-page-button {
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #d7d7d7;
+
+    svg {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  &__graph {
+    margin-top: 100px;
+  }
+
+  &__content {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+    }
+
+    &__left-part {
+      width: 100%;
+
+      @media screen and (min-width: 768px) {
+        width: 50%;
+        padding-right: 25px;
+      }
+    }
+
+    &__right-part {
+      width: 100%;
+      margin-top: 100px;
+
+      @media screen and (min-width: 768px) {
+        margin: 0;
+        width: 50%;
+        padding-left: 25px;
+      }
+    }
+  }
+}
