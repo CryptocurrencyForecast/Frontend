@@ -1,13 +1,11 @@
 import "./App.css";
-import HomePage from "./components/HomePage/HomePage";
-import PostList from "./components/Reddit/PostList";
+import BalanceView from "./components/Binance/Portfolio";
 
 
 function App() {
     return (
         <div className="App">
-            <HomePage/>
-            <PostList ticker="BTC"/>
+            <BalanceView/>
         </div>
     );
 }
