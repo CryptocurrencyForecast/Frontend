@@ -1,27 +1,27 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import { usePromiseTracker } from 'react-promise-tracker';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import { usePromiseTracker } from "react-promise-tracker";
+import "./Spinner.scss";
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        display: 'flex',
-        '& > * + *': {
-            marginLeft: theme.spacing(2),
-        },
+  root: {
+    display: "flex",
+    "& > * + *": {
+      marginLeft: theme.spacing(2),
     },
+  },
 }));
 
 function Spinner() {
-    const classes = useStyles();
-    const { promiseInProgress } = usePromiseTracker();
+  const classes = useStyles();
+  const { promiseInProgress } = usePromiseTracker();
 
-    return (
-        <div className={classes.root}>
-            {promiseInProgress &&
-            <CircularProgress color="secondary" size="80px" />}
-        </div>
-    );
+  return (
+    <div className={`graph-spinner ${classes.root}`}>
+      {promiseInProgress && <CircularProgress color="secondary" size="80px" />}
+    </div>
+  );
 }
 
 export default Spinner;

@@ -1,44 +1,36 @@
 import React from "react";
 import "./Coin.scss";
 
-const Coin = ({
-  name,
-  image,
-  symbol,
-  price,
-  volume,
-  priceChange,
-  marketCap,
-}) => {
+const Coin = ({ rank, name, image, symbol, price, volume, priceChange }) => {
   return (
     <tr className="coin-row">
-      <td className="coin-image">
+      <td className="col coin-rank">
+        <div>{rank}</div>
+      </td>
+      <td className="col coin-name">
         <div>
           <img src={image} alt="crypto" />
           <div className="name">{name}</div>
         </div>
       </td>
-      <td className="coin-image">
+      <td className="col coin-currency">
         <div>{symbol}</div>
       </td>
-      <td className="coin-image">
+      <td className="col coin-price">
         <div>${price}</div>
       </td>
-      <td className="coin-image">
-        <div>${volume.toLocaleString()}</div>
+      <td className="col coin-mktcap">
+        <div>${volume.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</div>
       </td>
       {priceChange < 0 ? (
-        <td className="coin-percent red">
+        <td className="col coin-percent red">
           <div>{priceChange.toFixed(2)}%</div>
         </td>
       ) : (
-        <td className="coin-percent green">
-          <div>{priceChange.toFixed(2)}%</div>
+        <td className="col coin-percent green">
+          <div>+{priceChange.toFixed(2)}%</div>
         </td>
       )}
-      <td className="coin-image">
-        <div>Mkt Cap: ${marketCap.toLocaleString}</div>
-      </td>
     </tr>
   );
 };
