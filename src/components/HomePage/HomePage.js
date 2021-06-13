@@ -8,22 +8,27 @@ function HomePage() {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    axios
-      .get(
-        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
-      )
-      .then((res) => {
-        setCoins(res.data);
-      })
-      .catch((error) => console.log(error));
-  });
+    const interval = setInterval(() => {
+      axios
+        .get(
+          "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
+        )
+        .then((res) => {
+          setCoins(res.data);
+        })
+        .catch((error) => console.log(error));
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
 
-  const filteredCoins = coins.filter((coin) =>
-    coin.name.toLowerCase().includes(search.toLocaleLowerCase())
+  const filteredCoins = coins.filter(
+    (coin) =>
+      coin.name.toLowerCase().includes(search.toLocaleLowerCase()) ||
+      coin.symbol.toLocaleLowerCase().includes(search.toLocaleLowerCase())
   );
 
   return (
@@ -52,14 +57,11 @@ function HomePage() {
               <th className="col value">
                 <div>Valeur</div>
               </th>
-              <th className="col name">
-                <div>Nom</div>
+              <th className="col mktcap">
+                <div>Market Cap</div>
               </th>
               <th className="col percent">
                 <div>% de changement</div>
-              </th>
-              <th className="col name">
-                <div>Nom</div>
               </th>
             </tr>
           </thead>

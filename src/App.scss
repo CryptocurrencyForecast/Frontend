@@ -50,6 +50,8 @@
 
 table {
   thead {
+    display: block;
+
     tr {
       th {
         background-color: #7918f2;
@@ -58,9 +60,21 @@ table {
   }
 
   tbody {
+    display: block;
+    height: 600px;
+    overflow: auto;
+
     tr {
       border-bottom: 1px solid #d7d7d7;
     }
+  }
+
+  thead,
+  tbody tr {
+    display: table;
+    width: 100%;
+    max-width: 1200px;
+    table-layout: fixed; /* even columns width , fix width of table too*/
   }
 
   tr {
@@ -92,26 +106,7 @@ table {
     }
   }
 }
-thead {
-  display: block;
-}
-tbody {
-  display: block;
-  height: 600px;
-  overflow: auto;
-}
-thead,
-tbody tr {
-  display: table;
-  width: 100%;
-  max-width: 1200px;
-  table-layout: fixed; /* even columns width , fix width of table too*/
-}
-thead {
-  // width: calc(
-  //   100% - 1em
-  // ); /* scrollbar is average 1em/16px width, remove it from thead width */
-}
+
 ::-webkit-scrollbar {
   width: 0; /* Remove scrollbar space */
   background: transparent; /* Optional: just make scrollbar invisible */
