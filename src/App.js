@@ -5,7 +5,7 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import CoinPage from "./components/CoinPage/CoinPage";
 import Page404 from "./components/404/404";
 import React from "react";
-import ButtonAppBar from "./components/Header/Navbar";
+import Navbar from "./components/Header/Navbar";
 
 function App() {
     return (
@@ -13,16 +13,30 @@ function App() {
             <Router>
                 <Switch>
                     <Route exact path="/">
-                        <ButtonAppBar/>
-                        <HomePage/>
+                        <Navbar/>
+                        <div className="Content">
+                            <HomePage/>
+                        </div>
                     </Route>
                     <Route exact path="/crypto/:id" render={(props) =>
                         <React.Fragment>
+                            <Navbar/>
                             <CoinPage {...props}/>
                         </React.Fragment>
-                    }
-                    />
-                    <Route component={Page404}/>
+                    }/>
+                    <Route exact path="/reddit">
+                        <Navbar/>
+                        <div className="Content">
+                            <RedditChartbar/>
+                        </div>
+                    </Route>
+                    <Route exact path="/portfolio">
+                        <Navbar/>
+                    </Route>
+                    <Route>
+                        <Navbar/>
+                        <Page404/>
+                    </Route>
                 </Switch>
             </Router>
         </div>

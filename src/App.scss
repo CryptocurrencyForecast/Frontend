@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-* {
+body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Montserrat", sans-serif;
-  background-color: #1a1a1c;
+  background-color: #1a1a1c !important;
   color: white;
 }
 
@@ -16,7 +16,7 @@ li {
   padding: 0;
 }
 
-.App {
+.Content {
   text-align: center;
   max-width: 1200px;
   width: 100%;
@@ -119,6 +119,17 @@ table {
       }
     }
   }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color:inherit;
+  text-decoration:none;
+  cursor:pointer;
 }
 
 ::-webkit-scrollbar {

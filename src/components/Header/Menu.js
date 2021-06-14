@@ -6,7 +6,9 @@ import MenuItem from '@material-ui/core/MenuItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@material-ui/icons/Menu';
-import {AccountBalanceWallet, Home, Reddit} from "@material-ui/icons";
+import {AccountBalanceWallet, Help, Home, Reddit} from "@material-ui/icons";
+import {Link} from "react-router-dom";
+
 
 const StyledMenu = withStyles({
     paper: {
@@ -62,24 +64,38 @@ export default function CustomizedMenus() {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
-                <StyledMenuItem>
-                    <ListItemIcon>
-                        <Home fontSize="small"/>
-                    </ListItemIcon>
-                    <ListItemText primary="Home"/>
-                </StyledMenuItem>
-                <StyledMenuItem>
-                    <ListItemIcon>
-                        <Reddit fontSize="small"/>
-                    </ListItemIcon>
-                    <ListItemText primary="Reddit"/>
-                </StyledMenuItem>
-                <StyledMenuItem>
-                    <ListItemIcon>
-                        <AccountBalanceWallet fontSize="small"/>
-                    </ListItemIcon>
-                    <ListItemText primary="Portfolio"/>
-                </StyledMenuItem>
+                <Link to={`/`}>
+                    <StyledMenuItem>
+                        <ListItemIcon>
+                            <Home fontSize="small"/>
+                        </ListItemIcon>
+                        <ListItemText primary="Home"/>
+                    </StyledMenuItem>
+                </Link>
+                <Link to={`/reddit`}>
+                    <StyledMenuItem>
+                        <ListItemIcon>
+                            <Reddit fontSize="small"/>
+                        </ListItemIcon>
+                        <ListItemText primary="Reddit"/>
+                    </StyledMenuItem>
+                </Link>
+                <Link to={`/portfolio`}>
+                    <StyledMenuItem>
+                        <ListItemIcon>
+                            <AccountBalanceWallet fontSize="small"/>
+                        </ListItemIcon>
+                        <ListItemText primary="Portfolio"/>
+                    </StyledMenuItem>
+                </Link>
+                <a href="/indicators.pdf" target="_blank">
+                    <StyledMenuItem>
+                        <ListItemIcon>
+                            <Help fontSize="small"/>
+                        </ListItemIcon>
+                        <ListItemText primary="Help"/>
+                    </StyledMenuItem>
+                </a>
             </StyledMenu>
         </div>
     );

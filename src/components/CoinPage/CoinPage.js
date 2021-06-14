@@ -9,6 +9,9 @@ import Chart from "../Chart/Chart";
 import PostList from "../Reddit/PostList";
 import TechnicalAnalysis from "../TechnicalAnalysis/TechnicalAnalysis";
 import { If } from "react-if";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import {AccountBalanceWallet} from "@material-ui/icons";
+import ListItemText from "@material-ui/core/ListItemText";
 
 const CoinPage = () => {
   let { id } = useParams();
@@ -38,11 +41,6 @@ const CoinPage = () => {
         <Page404 />
       ) : (
         <div>
-          <div className="home-page-button">
-            <Link to="/">
-              <HomeIcon />
-            </Link>
-          </div>
           <div className="coin-page__graph">
             <Chart symbol={`${id}USD`} />
           </div>
