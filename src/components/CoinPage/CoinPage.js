@@ -15,7 +15,6 @@ const CoinPage = () => {
 
   const [crypto, setCrypto] = useState({});
   const [wrongPage, setWrongPage] = useState(false);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
@@ -128,10 +127,8 @@ const CoinPage = () => {
                 </div>
               </If>
               <div className="social-messages block">
-                <div className="catch-sentence">
-                  Ils parlent du {crypto.id} !!
-                </div>
-                <PostList ticker={crypto.id} />
+                <div className="catch-sentence">Ils parlent du {id} !!</div>
+                <PostList />
               </div>
             </div>
           </div>

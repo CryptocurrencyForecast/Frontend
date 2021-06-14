@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import Post from "../Reddit/Post";
 import axios from "axios";
 import SentimentVeryDissatisfiedIcon from "@material-ui/icons/SentimentVeryDissatisfied";
 
-function PostList({ ticker }) {
+function PostList() {
+  let { id } = useParams();
+
   const [posts, setPosts] = useState([]);
 
   useEffect(async () => {
     axios
-      .get("https://cryptocurrencyforecast.herokuapp.com/last-posts/" + ticker)
+      .get(`https://cryptocurrencyforecast.herokuapp.com/last-posts/${id}`)
       .then((res) => {
         setPosts(res.data);
       })
@@ -16,7 +19,7 @@ function PostList({ ticker }) {
         console.error(error);
         return axios.request(error.config);
       });
-  });
+  }, [10000]);
 
   return (
     <div>
