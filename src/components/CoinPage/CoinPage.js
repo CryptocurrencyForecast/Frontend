@@ -20,7 +20,7 @@ const CoinPage = () => {
   useEffect(() => {
     axios
       .get(
-        `https://cryptocurrencyforecast.herokuapp.com/nomics/${id}`
+        `https://api.nomics.com/v1/currencies?key=f40c6b7456c197028c38acdd0a2b6c23&ids=${id}`
       )
       .then((res) => {
         if (res.data.length === 0) {
