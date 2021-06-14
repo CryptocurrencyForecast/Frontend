@@ -1,20 +1,37 @@
-.wallet-form{
-    input {
-        background-image: linear-gradient(
-            -225deg,
-            #ac32e4 0%,
-            #7918f2 48%,
-            #4801ff 100%
-            );
-            color: #e2e2e2;
-            padding: 10px;
-            &:first-child{
-                margin-right: 5px;
-            }
-            &:last-child{
-                margin-left: 5px;
-            }
+.wallet-form {
+  input {
+    background-image: linear-gradient(
+      -225deg,
+      #ac32e4 0%,
+      #7918f2 48%,
+      #4801ff 100%
+    );
+    color: #e2e2e2;
+    padding: 10px;
+    &:first-child {
+      margin-right: 5px;
     }
+    &:last-child {
+      margin-left: 5px;
+    }
+  }
+}
+.portfolio-graph {
+  margin-top: 80px;
 
+  &__container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+    .graph-spinner {
+      position: absolute;
+      z-index: 1;
+    }
+    .portfolio-doughnut{
+      height: 900px !important;
+      width: 900px !important;
+    }
+  }
 }
