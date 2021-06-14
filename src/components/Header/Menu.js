@@ -93,7 +93,7 @@ export default function CustomizedMenus() {
                         <ListItemIcon>
                             <Help fontSize="small"/>
                         </ListItemIcon>
-                        <ListItemText primary="Help"/>
+                        <ListItemText primary="Indicators"/>
                     </StyledMenuItem>
                 </a>
             </StyledMenu>

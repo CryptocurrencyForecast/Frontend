@@ -21,7 +21,9 @@ function App() {
                     <Route exact path="/crypto/:id" render={(props) =>
                         <React.Fragment>
                             <Navbar/>
-                            <CoinPage {...props}/>
+                            <div className="Content">
+                                <CoinPage {...props}/>
+                            </div>
                         </React.Fragment>
                     }/>
                     <Route exact path="/reddit">

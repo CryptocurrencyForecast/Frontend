@@ -121,6 +121,11 @@ table {
   }
 }
 
+.MuiAppBar-root, .MuiMenuItem-root, .MuiSvgIcon-root {
+  background-color: #1a1a1c !important;
+  color: #d3d4d5 !important;
+}
+
 a {
   color: inherit;
   text-decoration: none;
