@@ -5,6 +5,7 @@ import { trackPromise } from "react-promise-tracker";
 import Spinner from "../Spinner/Spinner";
 import Balance from "./Balance";
 
+// Testnet token (Dummy network, not critical)
 function BalanceView({
   token = "UimWOZ9hTGnsH1K2iIad65HcDCM0wMcvhpV8i7WzhxKyT17s3CDk4YLEZIsRJfBMXVtmEKyTUeP3hxw6xmWjWWWWf2DWPSgyQXxSFrrQMt3TjL8vYGryyjzLBiYfQYa3",
 }) {
@@ -49,24 +50,13 @@ function BalanceView({
 
   return (
     <div>
-      <form className="wallet-form">
-        <input
-          type="text"
-          placeholder="API key"
-          className="api-key"
-          value="UimWOZ9hTGnsH1K2iIad65HcDCM0wMcvhpV8i7WzhxKyT17s3CDk4YLEZIsRJfBM"
-        />
-        <input
-          type="text"
-          placeholder="API secret"
-          className="api-secret"
-          value="XVtmEKyTUeP3hxw6xmWjWWWWf2DWPSgyQXxSFrrQMt3TjL8vYGryyjzLBiYfQYa3"
-        />
-      </form>
+      <div className="wallet-form">
+        <h1>Portfolio report</h1>
+      </div>
       <div className="portfolio-graph">
         <div className="portfolio-graph__container">
           <Spinner />
-          <Doughnut className="portfolio-doughnut" data={data}/>
+          <Doughnut className="portfolio-doughnut" data={data} options={{radius:"60%"}}/>
         </div>
       </div>
     </div>
