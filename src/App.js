@@ -35,6 +35,9 @@ function App() {
                     </Route>
                     <Route exact path="/portfolio">
                         <Navbar/>
+                        <div className="Content">
+                            <BalanceView/>
+                        </div>
                     </Route>
                     <Route>
                         <Navbar/>
