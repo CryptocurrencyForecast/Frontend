@@ -6,6 +6,7 @@ import CoinPage from "./components/CoinPage/CoinPage";
 import Page404 from "./components/404/404";
 import React from "react";
 import Navbar from "./components/Header/Navbar";
+import BalanceView from "./components/Binance/Portfolio";
 
 function App() {
     return (
