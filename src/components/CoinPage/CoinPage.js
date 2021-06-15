@@ -46,21 +46,23 @@ const CoinPage = () => {
               <TechnicalAnalysis symbol={`${id}USD`} />
               <If
                 condition={
-                  crypto.twitter_url ||
-                  crypto.facebook_url ||
-                  crypto.github_url ||
-                  crypto.reddit_url
+                  crypto.urls ||
+                  crypto.urls ||
+                  crypto.urls ||
+                  crypto.urls ||
+                  crypto.urls ||
+                  crypto.urls
                 }
               >
                 <div className="social block">
-                  <If condition={crypto.twitter_url}>
+                  <If condition={crypto.urls}>
                     <div className="social__name">
                       <img
                         src="https://upload.wikimedia.org/wikipedia/fr/thumb/c/c8/Twitter_Bird.svg/300px-Twitter_Bird.svg.png"
                         alt="twitter logo"
                       />
                       <a
-                        href={crypto.twitter_url}
+                        href={crypto.urls}
                         target="_blank"
                         rel="noreferrer"
                       >
@@ -68,29 +70,14 @@ const CoinPage = () => {
                       </a>
                     </div>
                   </If>
-                  <If condition={crypto.facebook_url}>
-                    <div className="social__name">
-                      <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1024px-Facebook_Logo_%282019%29.png"
-                        alt="facebook logo"
-                      />
-                      <a
-                        href={crypto.facebook_url}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Facebook
-                      </a>
-                    </div>
-                  </If>
-                  <If condition={crypto.github_url}>
+                  <If condition={crypto.urls}>
                     <div className="social__name">
                       <img
                         src="https://mtlantoine.github.io/CV/assets/pic/svg/github.svg"
                         alt="github logo"
                       />
                       <a
-                        href={crypto.github_url}
+                        href={crypto.urls}
                         target="_blank"
                         rel="noreferrer"
                       >
@@ -98,18 +85,63 @@ const CoinPage = () => {
                       </a>
                     </div>
                   </If>
-                  <If condition={crypto.reddit_url}>
+                  <If condition={crypto.urls}>
                     <div className="social__name">
                       <img
                         src="https://www.elementaryos-fr.org/wp-content/uploads/2019/08/logo-reddit.png"
                         alt="reddit logo"
                       />
                       <a
-                        href={crypto.reddit_url}
+                        href={crypto.urls}
                         target="_blank"
                         rel="noreferrer"
                       >
                         Reddit
+                      </a>
+                    </div>
+                  </If>
+                  <If condition={crypto.urls}>
+                    <div className="social__name">
+                      <img
+                        src="https://cpgcanhelp.com/wp-content/uploads/2018/03/Technical-Writing.png"
+                        alt="technical doc logo"
+                      />
+                      <a
+                        href={crypto.urls}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Technical documentation
+                      </a>
+                    </div>
+                  </If>
+                  <If condition={crypto.urls}>
+                    <div className="social__name">
+                      <img
+                        src="http://www.cds07.fr/wp-content/uploads/sites/7/2020/03/website-logo-png.png"
+                        alt="website logo"
+                      />
+                      <a
+                        href={crypto.urls}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Website
+                      </a>
+                    </div>
+                  </If>
+                  <If condition={crypto.urls}>
+                    <div className="social__name">
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Google_Messages_logo.svg/2500px-Google_Messages_logo.svg.png"
+                        alt="message logo"
+                      />
+                      <a
+                        href={crypto.urls}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Message
                       </a>
                     </div>
                   </If>
@@ -121,7 +153,6 @@ const CoinPage = () => {
                 <div className="description block">
                   <div className="description__content">
                     {crypto.description}
-                    {console.log(crypto)}
                   </div>
                 </div>
               </If>
