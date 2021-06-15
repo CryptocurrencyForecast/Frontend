@@ -19,7 +19,7 @@ const CoinPage = () => {
         .then((res) => {
           setCrypto(res.data);
         })
-        .catch((error) => console.log(error));
+        .catch((error) => console.error(error));
     }, 1000);
     return () => clearInterval(interval);
   }, []);
