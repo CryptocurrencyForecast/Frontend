@@ -80,7 +80,11 @@ function HomePage() {
           </thead>
           <tbody className={`${loading ? "active" : ""}`}>
             <If condition={loading}>
-              <Spinner />
+              <tr>
+                <td>
+                  <Spinner />
+                </td>
+              </tr>
             </If>
             {filteredCoins.map((coin) => {
               return (
