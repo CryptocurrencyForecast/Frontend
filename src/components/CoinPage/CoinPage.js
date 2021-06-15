@@ -21,12 +21,12 @@ const CoinPage = () => {
 
   useEffect(() => {
     axios
-      .get(`https://cryptocurrencyforecast.herokuapp.com/nomics/${id}`)
+      .get(`https://cryptocurrencyforecast.herokuapp.com/marketcap/${id}`)
       .then((res) => {
         if (res.data.length === 0) {
           setWrongPage(true);
         } else {
-          setCrypto(...res.data);
+          setCrypto(res.data.data[id]);
         }
       })
       .catch((error) => console.error(error));
@@ -121,6 +121,7 @@ const CoinPage = () => {
                 <div className="description block">
                   <div className="description__content">
                     {crypto.description}
+                    {console.log(crypto)}
                   </div>
                 </div>
               </If>
