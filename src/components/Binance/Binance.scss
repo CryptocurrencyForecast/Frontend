@@ -1,3 +1,83 @@
+.portfolio-formulaire {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  .input-part {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__B {
+      margin-top: 20px;
+    }
+
+    @media screen and (min-width: 768px) {
+      &__A {
+        margin-right: 20px;
+      }
+
+      &__B {
+        margin: 0 0 0 20px;
+      }
+    }
+
+    .coin-input {
+      margin-top: 10px;
+      padding-left: 16px;
+      width: 300px;
+      height: 50px;
+      border-radius: 4px;
+      border: none;
+      background-image: linear-gradient(
+        -225deg,
+        #ac32e4 0%,
+        #7918f2 48%,
+        #4801ff 100%
+      );
+      color: #e2e2e2;
+
+      &::placeholder {
+        color: #e2e2e2;
+      }
+    }
+
+    .tip {
+      margin-top: 10px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      font-style: italic;
+      font-size: 12px;
+
+      span {
+        font-size: 8px;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.submit-button {
+  cursor: pointer;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 4px;
+  font-weight: 800;
+  background-color: #7918f2;
+  transition: 200ms ease-in-out;
+
+  &:hover {
+    background-color: #5c14b3;
+  }
+}
+
 .wallet-form {
   input {
     background-image: linear-gradient(
@@ -17,7 +97,7 @@
   }
 }
 .portfolio-graph {
-  margin-top: 80px;
+  margin-top: 50px;
 
   &__container {
     position: relative;

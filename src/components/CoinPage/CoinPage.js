@@ -18,7 +18,6 @@ const CoinPage = () => {
         )
         .then((res) => {
           setCrypto(res.data);
-          console.log(res.data);
         })
         .catch((error) => console.log(error));
     }, 1000);
