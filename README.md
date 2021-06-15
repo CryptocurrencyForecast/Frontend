@@ -1,3 +1,12 @@
+# MEMBRES
+
+Pierre Fontaine : fontaipi  
+Lucas Pasqualini : shootylife  
+Logan Chenavier : Logan-Chenavier  
+Nicolas Droissart : ndrg13  
+Antoine Mortelier : MTLantoine  
+Louis Dutoit : louisdtt  
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
