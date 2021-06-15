@@ -38,6 +38,10 @@ const CoinPage = () => {
         <Page404 />
       ) : (
         <div>
+          <div>
+            <img src={crypto.logo} alt="message logo"/>
+            <div>{id}</div>
+          </div>
           <div className="coin-page__graph">
             <Chart symbol={`${id}USD`} />
           </div>
