@@ -1,4 +1,22 @@
 .coin-page {
+  .crypto-title {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: linear-gradient(-225deg, #ac32e4 0%, #7918f2 48%, #4801ff 100%);
+
+    .image {
+      margin-right: 10px;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: 800;
+    }
+  }
+
   .home-page-button {
     display: flex;
     justify-content: flex-start;
@@ -12,7 +30,7 @@
   }
 
   &__graph {
-    margin-top: 20px;
+    margin-top: 50px;
     height: 600px;
   }
 
@@ -118,7 +136,7 @@
               align-items: center;
 
               svg {
-                background-color: #1e222d;
+                background-color: #1e222d !important;
                 margin-right: 20px;
                 width: 40px;
                 height: 40px;
